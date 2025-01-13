@@ -132,7 +132,7 @@ const MainPage = () => {
 
   return (
     <main className="main2">
-      <video playsinline autoPlay loop muted className="videoBg">
+      <video playsInline autoPlay loop muted className="videoBg">
         <source src={backgroundVideo} type="video/mp4" />
       </video>
       <Navbar />

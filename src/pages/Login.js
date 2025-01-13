@@ -55,7 +55,7 @@ function Login() {
 
   return (
     <div className="login-page">
-      <video autoPlay loop muted className="videoBg-login">
+      <video playsInline autoPlay loop muted className="videoBg-login">
         <source src={backgroundVideo} type="video/mp4" />
       </video>
       <Navbar />

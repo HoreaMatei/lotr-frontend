@@ -48,7 +48,7 @@ const App = () => {
   return (
     <div className="page">
       <Navbar />
-      <video playsinline autoPlay loop muted className="videoBg">
+      <video playsInline autoPlay loop muted className="videoBg">
         <source src={backgroundVideo} type="video/mp4" />
       </video>
       <div></div>
@@ -57,7 +57,7 @@ const App = () => {
           <p className={`title `}>Choose a character and start playing</p>
           <div className="searchDiv">
             <input
-              autocomplete="off"
+              autoComplete="off"
               type="search"
               placeholder="search for a character..."
               id="input"
@@ -69,7 +69,7 @@ const App = () => {
               <img
                 className="search-img"
                 src={photo}
-                priority
+                priority="true"
                 width={30}
                 height={30}
                 alt="search"
@@ -84,7 +84,7 @@ const App = () => {
         ) ? (
           <div className="linksContainer">
             {story.columns.map((item, index) => (
-              <div>
+              <div key={index}>
                 {item.title.toLowerCase().includes(inputValue.toLowerCase()) ? (
                   <button
                     onClick={() => handleItemClick(item)}

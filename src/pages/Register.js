@@ -59,7 +59,7 @@ const RegisterPage = () => {
 
   return (
     <div className="register-page">
-      <video playsinline autoPlay loop muted className="videoBg-register">
+      <video playsInline autoPlay loop muted className="videoBg-register">
         <source src={backgroundVideo} type="video/mp4" />
       </video>
       <Navbar />
