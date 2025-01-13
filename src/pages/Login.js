@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate, useLocation } from "react-router-dom";
 import backgroundVideo from "../media/2.mp4";
 import "./Login.css";
-require("dotenv").config();
+
 import Navbar from "../components/Navbar";
 function Login() {
   const [email, setEmail] = useState("");

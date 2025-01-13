@@ -6,7 +6,6 @@ import Navbar from "../components/Navbar";
 import "./MainPage.css";
 import backgroundVideo from "../media/2.mp4";
 import axios from "axios";
-require("dotenv").config();
 
 const BASE_URL = process.env.REACT_APP_API_URL;
 
