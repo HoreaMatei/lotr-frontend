@@ -12,7 +12,6 @@ const App = () => {
   const navigate = useNavigate();
 
   const handleClick = async () => {
-    console.log("clicked");
     setInputValue(document.getElementById("input").value);
   };
 
@@ -35,12 +34,10 @@ const App = () => {
   };
 
   useEffect(() => {
-    console.log("useEffect triggered"); // Check if useEffect is called
     Storyblok.get("cdn/stories/rings", {
       version: "draft",
     })
       .then((response) => {
-        console.log("API Response", response.data.story.content.body[0]); // Verify API response
         setStory(response.data.story.content.body[0]);
       })
       .catch((error) => {

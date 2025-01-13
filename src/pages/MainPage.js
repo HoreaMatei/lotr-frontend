@@ -128,7 +128,6 @@ const MainPage = () => {
 
     // Call saveBestScore whenever `cards` or `turns` change
     saveBestScore();
-    console.log(userName);
   }, [cards, turns]);
 
   return (

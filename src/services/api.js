@@ -7,7 +7,7 @@ const API = axios.create({ baseURL: `${BASE_URL}/api` });
 const fetchUsers = async () => {
   try {
     const response = await API.get("/users");
-    console.log("Fetched users in api.js:", response.data); // Check the response data here
+
     return response.data; // This should be the data you're expecting
   } catch (error) {
     console.log("Failed to fetch users:", error.message);
