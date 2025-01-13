@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate, useLocation } from "react-router-dom";
 import backgroundVideo from "../media/2.mp4";
 import "./Login.css";
+require("dotenv").config();
 import Navbar from "../components/Navbar";
 function Login() {
   const [email, setEmail] = useState("");
@@ -12,12 +13,12 @@ function Login() {
   const { redirectTo, item } = location.state || {};
   const handleLogin = async (e) => {
     e.preventDefault();
-
+    const BASE_URL = process.env.REACT_APP_API_URL;
     try {
-      const response = await axios.post(
-        "http://localhost:5000/api/users/login",
-        { email, password }
-      );
+      const response = await axios.post(`${BASE_URL}/api/users/login`, {
+        email,
+        password,
+      });
 
       const token = response.data.token;
 

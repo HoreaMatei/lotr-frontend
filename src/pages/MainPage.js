@@ -6,6 +6,9 @@ import Navbar from "../components/Navbar";
 import "./MainPage.css";
 import backgroundVideo from "../media/2.mp4";
 import axios from "axios";
+require("dotenv").config();
+
+const BASE_URL = process.env.REACT_APP_API_URL;
 
 const MainPage = () => {
   const [bestScore, setBestScore] = useState("N/A");
@@ -83,12 +86,9 @@ const MainPage = () => {
     const fetchBestScore = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await axios.get(
-          "http://localhost:5000/api/users/best-score",
-          {
-            headers: { Authorization: `Bearer ${token}` },
-          }
-        );
+        const response = await axios.get(`${BASE_URL}/api/users/best-score`, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
         setBestScore(response.data.bestScore || "N/A");
         setUserName(
           response.data.userName
@@ -113,7 +113,7 @@ const MainPage = () => {
         try {
           const token = localStorage.getItem("token");
           const response = await axios.put(
-            "http://localhost:5000/api/users/best-score",
+            `${BASE_URL}/api/users/best-score`,
             { score: turns },
             { headers: { Authorization: `Bearer ${token}` } }
           );

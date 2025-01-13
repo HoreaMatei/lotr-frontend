@@ -1,6 +1,9 @@
 import axios from "axios";
+require("dotenv").config();
 
-const API = axios.create({ baseURL: "http://localhost:5000/api" });
+const BASE_URL = process.env.REACT_APP_API_URL;
+
+const API = axios.create({ baseURL: `${BASE_URL}/api` });
 
 const fetchUsers = async () => {
   try {
